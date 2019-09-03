@@ -1,0 +1,41 @@
+{
+  "name": "anime-downloader",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git"
+  },
+  "author": "Ivan Zamanov",
+  "license": "MIT",
+  "scripts": {
+    "start": "node dist/app.js",
+    "build": "npm run build-ts && npm run lint",
+    "fairy": "npm run build-ts && npm start https://www.nwanime.tv/fairy-tail-final-series/anime/6421/",
+    "embedded": "npm run build-ts && node dist/embedded.js",
+    "test": "jest --forceExit --coverage --verbose",
+    "build-ts": "tsc",
+    "watch-ts": "tsc -w",
+    "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix"
+  },
+  "dependencies": {
+    "@types/argparse": "^1.0.36",
+    "argparse": "^1.0.10",
+    "cheerio": "^1.0.0-rc.3",
+    "jsdom": "^15.1.1",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
+  },
+  "devDependencies": {
+    "@types/cheerio": "^0.22.13",
+    "@types/jsdom": "^12.2.4",
+    "@types/request": "^2.48.2",
+    "@types/request-promise": "^4.1.44",
+    "@typescript-eslint/eslint-plugin": "^1.12.0",
+    "@typescript-eslint/parser": "^1.12.0",
+    "acorn": "^7.0.0",
+    "eslint": "^5.0.0",
+    "jest": "^24.8.0",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.2"
+  }
+}
